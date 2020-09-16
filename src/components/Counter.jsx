@@ -1,7 +1,11 @@
 import React, { Component } from "react";
-import { render } from "@testing-library/react";
 
 class Counter extends Component {
+  constructor() {
+    super();
+    console.log("Im in constructor");
+  }
+
   getValue = () => {
     const { value } = this.props.counter;
     return value === 0 ? "Zero" : value;
@@ -18,7 +22,23 @@ class Counter extends Component {
     return classes;
   };
 
+  componentDidMount() {
+    console.log("I'm in mount");
+    if (this.props.counter.value === 3) {
+      console.log("this is not 3", this.props.counter);
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("Im in update.", prevProps, this.props);
+  }
+
+  componentWillUnmount() {
+    console.log("I am in unmount");
+  }
+
   render() {
+    console.log("Im in render");
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.getValue()}</span>
