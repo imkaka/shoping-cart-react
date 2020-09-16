@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { render } from "@testing-library/react";
 
 class Counter extends Component {
   getValue = () => {
@@ -18,7 +19,6 @@ class Counter extends Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.getValue()}</span>
@@ -26,7 +26,7 @@ class Counter extends Component {
           onClick={() => this.props.onIncrement(this.props.counter)}
           className="btn btn-primary btn-sm m-2"
         >
-          Increment
+          Add
         </button>
         <button
           onClick={() => this.props.onDelete(this.props.counter.id)}
