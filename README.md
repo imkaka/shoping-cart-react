@@ -1,6 +1,6 @@
 # Shopping Cart
 
-**Please switch to [func-components branch](https://github.com/imkaka/shoping-cart-react/tree/func-components) for functional components with Hooks.**
+**Please switch to [master](https://github.com/imkaka/shoping-cart-react/tree/master) for class based components.**
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
