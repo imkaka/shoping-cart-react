@@ -2,17 +2,18 @@ import React from "react";
 
 import Counter from "./Counter";
 
-// Functional Component - state (React hooks) later
-function Counters(props) {
+// Functional Component - state (React hooks) later :D:
+// stateless -> using useState hook we can create our state here as well.
+function Counters({ counters, onReset, onIncrement, onDelete }) {
   return (
     <div>
-      <button className="btn btn-secondary m-2" onClick={props.onReset}>
+      <button className="btn btn-secondary m-2" onClick={onReset}>
         Reset
       </button>
-      {props.counters.map((counter) => (
+      {counters.map((counter) => (
         <Counter
-          onDelete={props.onDelete}
-          onIncrement={props.onIncrement}
+          onDelete={onDelete}
+          onIncrement={onIncrement}
           key={counter.id}
           counter={counter}
         />

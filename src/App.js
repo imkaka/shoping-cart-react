@@ -1,62 +1,68 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Counters from "./components/Counters";
 import NavBar from "./components/NavBar";
 
-class App extends Component {
-  state = {
-    counters: [
-      { id: 1, value: 3 },
-      { id: 2, value: 0 },
-      { id: 3, value: 0 },
-      { id: 4, value: 0 },
-      { id: 5, value: 0 },
-    ],
+function App() {
+  // All hooks hooks should be at the top.
+  const [counters, setCounters] = useState([
+    { id: 1, value: 5 },
+    { id: 2, value: 0 },
+    { id: 3, value: 2 },
+    { id: 4, value: 0 },
+  ]);
+  const [randomValue, setRandomValue] = useState(0);
+
+  // we can call this hooks to create as many no of states as possible.
+
+  // Hooks - provided by react
+  // custom hooks -> we write ourselves.
+
+  const handleDelete = (counterId) => {
+    const newCounters = counters.filter((counter) => counter.id !== counterId);
+    setCounters(newCounters);
   };
 
-  handleDelete = (counterId) => {
-    const counters = this.state.counters.filter(
-      (counter) => counter.id !== counterId
-    );
-    this.setState({ counters });
+  const handleIncrement = (counter) => {
+    const newCounters = [...counters];
+    const index = newCounters.indexOf(counter);
+    newCounters[index] = { ...counter };
+    newCounters[index].value++;
+
+    setCounters(newCounters);
   };
 
-  handleIncrement = (counter) => {
-    const counters = [...this.state.counters];
-    const index = counters.indexOf(counter);
-    counters[index] = { ...counter };
-    counters[index].value++;
-
-    this.setState({ counters });
-  };
-
-  handleReset = () => {
-    const counters = this.state.counters.map((counter) => {
+  const handleReset = () => {
+    const newCounters = counters.map((counter) => {
       let newCounter = { ...counter };
       newCounter.value = 0;
       return newCounter;
     });
 
-    this.setState({ counters });
+    setCounters(newCounters);
   };
 
-  getTotalCount = () => {
-    return this.state.counters.filter((counter) => counter.value > 0).length;
+  const getTotalCount = () => {
+    return counters.filter((counter) => counter.value > 0).length;
   };
 
-  render() {
-    return (
-      <div>
-        <NavBar totalCount={this.getTotalCount()} />
-        <Counters
-          onReset={this.handleReset}
-          onDelete={this.handleDelete}
-          onIncrement={this.handleIncrement}
-          counters={this.state.counters}
-        />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <NavBar totalCount={getTotalCount()} />
+      <Counters
+        onReset={handleReset}
+        onDelete={handleDelete}
+        onIncrement={handleIncrement}
+        counters={counters}
+      />
+      <button
+        onClick={() => setRandomValue(randomValue + 1)}
+        className="btn btn-success"
+      >
+        {randomValue}
+      </button>
+    </div>
+  );
 }
 
 export default App;

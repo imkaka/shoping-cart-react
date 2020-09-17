@@ -1,0 +1,52 @@
+4 Tech:
+
+1. HTML [X]
+2. CSS [x]
+3. JS [] - You don't know JS
+4. React [ ] -> Youtube/ Frontend masters
+
+Python/C - basic knoweledge
+
+Others tools
+
+1. git/Github
+2. VS Code (Keywarod + Touch Typing)
+
+git bash - 
+powershell - everything else.
+git bash (git commits) (not powerful) -> git operations
+
+
+
+# React.JS -> Facebook lib - (react, react-dom)
+
+UI - componenets
+
+
+SPA - Single Page Applications
+index.html -> nav, footer, sidebar 
+
+
+Developer Server
+Babel Compiler (JSX, JS(ES+) -> JS)
+Webpack -> Production
+
+
+React Checklist:
+
+1. Why React
+2. React Basics
+   1. create-react-app 
+   2. Components -> Class based componenets
+   3. state
+   4. render
+   5. JSX -> Conditional Rendering, List Rendering. 
+   6. props
+   7. Passing data to childern
+   8. Lifting the state
+   9. How React renders elements to DOM 
+   10. What happens when state of perticular component is changeed (updated)
+   11. What happens when a react element is removed from DOM.
+   12. Life Cycle hooks (mount)
+   13. Function based components (used) -> React Hooks
+   14. React hooks
