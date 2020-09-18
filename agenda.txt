@@ -1,0 +1,101 @@
+4 Tech:
+
+1. HTML [X]
+2. CSS [x]
+3. JS [] - You don't know JS -> (30-45) - (30-45) mins - Book Reading
+4. React [ ] -> Youtube/ Frontend masters
+
+Python/C - basic knoweledge
+
+Others tools
+
+1. git/Github
+2. VS Code (Keywarod + Touch Typing)
+
+git bash - 
+powershell - everything else.
+git bash (git commits) (not powerful) -> git operations
+
+Linux/Mac -> Terminal
+
+
+# React.JS -> Facebook lib - (react, react-dom)
+
+UI - componenets
+
+
+SPA - Single Page Applications
+index.html -> nav, footer, sidebar 
+
+
+Developer Server
+Babel Compiler (JSX, JS(ES+) -> JS)
+Webpack -> Production
+
+
+React Checklist:
+
+1. Why React
+2. React Basics
+   1. create-react-app  - done
+   2. Components -> Class based componenets []
+   3. state - [X]
+   4. render - [x]
+   5. JSX -> Conditional Rendering, List Rendering.  [x]
+   6. props [x]
+   7. Passing data to childern [x] -> children attr(closing tag of component)
+   8. Lifting the state [x]
+   9. How React renders elements to DOM [x]
+   10. What happens when state of perticular component is changeed (updated) [x]
+   11. What happens when a react element is removed from DOM. [x]
+   12. Life Cycle hooks [x]
+       hooks -> we can do something.
+
+       eg - mounting-> n -state change hua -> DOM new value -> (API(n+1) -> data (use))
+     
+     1. Mounting Phase ->  
+          constructor -> getDerivedStateFromProps(less) ->  render -> componentDidMount
+     2. Update Phase ->
+          getDerivedStateFromProps(less) - (re)render -> componentDidUpdate
+
+     3. Unmounting (removing) Phase
+          componentWillUnmount
+
+     (Class Based Components)
+
+   13. Function based components -> React Hooks
+   14. React hooks - useState, useEffect, useRef, useContext
+
+
+   state - local(comp) -> modify -> re-render
+   props -> childern - (read only) -> Function. obj (anythig)
+
+   Counters(state) -(props)-> Counter (state)
+        Handle(func)       <-- Event Raise (pops function)
+
+
+   single principle - jiska state h, wo hi modify karega.
+   source of truth - single.
+
+   Controlled Components -
+
+   App is controlling -> Counters is controlling Counter.
+
+
+Project Structure:
+git:
+     branches:
+     (n)
+     master* <-                                     <master
+          |                                  (n+2)  |
+          -> func-comp* -> commits -> commits       |
+
+
+     master - class based code (same functionality)
+     func-compoments - function based code (same functionality)
+
+git branch - list all branches
+git branch <name> -> new branch <name>
+git branch -d(soft)/-D(force) <name> -> delete the branch
+git checkout <branch_name> -> swtich to branch_name
+git checkout -b <branch_name> -> crate a new branch as well as switch to that brnach.
